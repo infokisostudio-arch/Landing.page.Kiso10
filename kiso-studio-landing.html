@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kiso Studio | Menù digitali con il 10% di sconto</title>
+<meta name="description" content="Menù digitali per ristoranti, bar e pub di Lecco e provincia. Lo aggiorni tu dal telefono con un foglio Google, senza abbonamenti. Sconto del 10% sul lavoro di realizzazione.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A0B0E">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Kiso Studio">
+<meta property="og:title" content="Kiso Studio | Menù digitali con il 10% di sconto">
+<meta property="og:description" content="Menù digitali per ristoranti, bar e pub di Lecco e provincia. Lo aggiorni tu dal telefono, senza abbonamenti.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  /* ---------- Palette e variabili ---------- */
+  :root {
+    --bg: #0A0B0E;
+    --text: #F5F5F7;
+    --silver: #B8BCC4;
+    --amber: #D9A441;
+    --line: rgba(184, 188, 196, .45);
+    --wa: #1FA855;           /* verde WhatsApp sobrio, solo per l'icona */
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    min-height: 100vh; min-height: 100dvh;
+    background: radial-gradient(120% 70% at 50% 0%, #181A21 0%, var(--bg) 60%) fixed, var(--bg);
+    color: var(--text);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+    display: flex; justify-content: center;
+    padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  }
+  /* ---------- Colonna centrata ---------- */
+  main {
+    width: 100%; max-width: 460px;
+    min-height: 100vh; min-height: 100dvh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 32px 24px 24px; text-align: center;
+  }
+  /* Logo: i bordi sfumano nello sfondo, il logo non è modificato */
+  .logo {
+    display: block; width: min(100%, 340px); height: auto; margin-bottom: 28px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent), linear-gradient(180deg, transparent, #000 12%, #000 88%, transparent);
+    mask-composite: intersect;
+  }
+  h1 { text-wrap: balance; font-weight: 800; font-size: clamp(2.1rem, 9.5vw, 2.75rem); line-height: 1.08; letter-spacing: -.02em; }
+  .sub { margin-top: 18px; color: var(--silver); font-size: 1.02rem; line-height: 1.6; max-width: 36ch; }
+
+  /* ---------- Pulsanti ---------- */
+  .btn {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    width: 100%; min-height: 56px; padding: 14px 20px;
+    border-radius: var(--radius); text-decoration: none;
+    font-family: inherit; font-weight: 600; font-size: 1.05rem; line-height: 1.2;
+    transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, border-color .18s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .btn:focus-visible { outline: 3px solid var(--amber); outline-offset: 3px; }
+  .btn:active { transform: scale(.98); }
+  .btn-main { margin-top: 34px; gap: 10px; padding-inline: 16px; white-space: nowrap; background: var(--text); color: var(--bg); font-weight: 800; box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+  .btn-main svg { width: 24px; height: 24px; flex: none; fill: var(--wa); }
+  .btn-main:hover { background: #fff; box-shadow: 0 14px 38px rgba(245,245,247,.12); transform: translateY(-2px); }
+  .btn-main:active { transform: scale(.98); }
+  .badge { background: var(--amber); color: var(--bg); font-weight: 800; font-size: .8rem; padding: 4px 9px; border-radius: 999px; }
+  .note { margin-top: 14px; color: var(--silver); font-size: .84rem; line-height: 1.5; max-width: 34ch; }
+  .note b { color: var(--amber); font-weight: 600; }
+  .btn-alt { margin-top: 26px; border: 1px solid var(--line); background: transparent; color: var(--text); }
+  .btn-alt:hover { border-color: var(--text); background: rgba(245,245,247,.06); }
+  footer { margin-top: 40px; color: var(--silver); font-size: .8rem; }
+
+  /* ---------- Animazione di ingresso (una sola, leggera) ---------- */
+  .in { animation: in .7s cubic-bezier(.2,.7,.2,1) both; }
+  @keyframes in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .in { animation: none; }
+    .btn { transition: none; }
+    .btn:hover, .btn:active { transform: none; }
+  }
+</style>
+</head>
+<body>
+<main class="in">
+  <img class="logo" alt="Kiso Studio" width="560" height="201" src="kisostudiologo.jpeg">
+
+  <h1>Il tuo menù digitale con il 10% di sconto</h1>
+  <p class="sub">Menù digitali per ristoranti, bar e pub di Lecco e provincia. Lo aggiorni tu dal telefono con un foglio Google, senza abbonamenti.</p>
+
+  <!-- Il link statico (con KISO10) vale per chi non ha JavaScript; lo script lo sostituisce con il codice dell'indirizzo -->
+  <a id="wa" class="btn btn-main" href="https://wa.me/393923901868?text=Ciao%20Kiso%20Studio!%20Ho%20visto%20la%20vostra%20pagina%20e%20vorrei%20informazioni%20sui%20men%C3%B9%20digitali%20per%20il%20mio%20locale.%20Codice%20sconto%2010%25%3A%20KISO10" target="_blank" rel="noopener noreferrer" aria-label="Scrivici su WhatsApp, sconto del 10 per cento">
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.15h-.01a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.12-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+    <span>Scrivici su WhatsApp</span>
+    <span class="badge" aria-hidden="true">-10%</span>
+  </a>
+
+  <p class="note">Sconto del 10% sul lavoro di realizzazione. Il codice <b id="code">KISO10</b> è già nel messaggio.<span id="expiry" hidden> Valido fino al <span id="expiry-date"></span>.</span></p>
+
+  <a id="site" class="btn btn-alt" href="#" aria-label="Scopri il sito di Kiso Studio">Scopri il sito</a>
+
+  <footer>Kiso Studio · Lecco e provincia</footer>
+</main>
+
+<script>
+/* =====================================================
+   CONFIGURAZIONE: modifica solo questo blocco
+   ===================================================== */
+const CONFIG = {
+  whatsappNumber: "393923901868",
+  defaultCode: "KISO10",
+  siteUrl: "https://kisostudio.vercel.app/",
+  expiry: ""    // opzionale, es. "31 dicembre 2026"; se vuoto non mostrare nulla
+};
+
+(function () {
+  /* Legge ?c=... dall'indirizzo e lo sanifica:
+     solo lettere maiuscole, numeri e trattino, massimo 20 caratteri. */
+  function getCode() {
+    var raw = "";
+    try { raw = new URLSearchParams(window.location.search).get("c") || ""; } catch (e) {}
+    var clean = raw.toUpperCase().replace(/[^A-Z0-9-]/g, "").slice(0, 20);
+    return clean || CONFIG.defaultCode;
+  }
+  var code = getCode();
+
+  /* Messaggio precompilato e link WhatsApp */
+  var message = "Ciao Kiso Studio! Ho visto la vostra pagina e vorrei informazioni sui menù digitali per il mio locale. Codice sconto 10%: " + code;
+  document.getElementById("wa").href =
+    "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message);
+
+  /* Codice mostrato nella riga sotto il pulsante (textContent: nessun HTML iniettato) */
+  document.getElementById("code").textContent = code;
+
+  /* Scadenza: se vuota non si mostra nulla */
+  if (CONFIG.expiry) {
+    document.getElementById("expiry-date").textContent = CONFIG.expiry;
+    document.getElementById("expiry").hidden = false;
+  }
+
+  /* Link al sito (stessa scheda) */
+  document.getElementById("site").href = CONFIG.siteUrl;
+})();
+</script>
+</body>
+</html>
